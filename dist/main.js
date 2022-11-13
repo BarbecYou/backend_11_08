@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log({title:"lmao",price:1200,isbn:"3838",weight:12})})();
