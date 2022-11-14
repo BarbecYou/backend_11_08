@@ -1,36 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>var exports = {};</script>
     <script defer src="./src/index.js"></script>
+    <link rel="stylesheet" href="./src/style.css">
 </head>
+
 <body>
-    <!-- form inputs for books -->
-    <div class="form-inputs">
-        <div class="title-input">
-            <label for="titleInput">Könyv címe: </label><br>
-            <input type="text" name="titleInput" id="titleInput">
-        </div>
-        <div class="price-input">
-            <label for="priceInput">Könyv ára:</label><br>
-            <input type="number" name="priceInput" id="priceInput">
-        </div>
-        <div class="size-input">
-            <label for="sizeInput">Könyv mérete (súly vagy fileméret): </label><br>
-            <input type="number" name="sizeInput" id="sizeInput">
-        </div>
-        <div class="isbn-input">
-            <label for="isbnInput">Könyv ISBN kódja (13 számjegy):</label><br>
-            <input type="text" name="isbnInput" id="isbnInput">
-        </div>
-        <div class="submit-input">
-            <input type="button" value="Könyv felvétele" id="submit">
+    <!-- info on added books -->
+    <div class="books-info-panel">
+
+        <div class="info-container">
+
+            <div id="books-amount">
+                <p>Könyvek darabszáma: 0</p>
+            </div>
+
+            <div id="free-books-amount">
+                <p>Ingyenes könyvek darabszáma: 0</p>
+            </div>
+
+            <div id="books-price-total">
+                <p>Könyvek ára összesen: 0</p>
+            </div>
         </div>
     </div>
+    <!-- form and options on left side -->
+    <div class="side-form">
 
+        <!-- select if added book is paper or ebook-->
+        <div class="book-type-select">
+
+            <p id="bookTypeSelectText">A könvy típusa: </p>
+
+            <div class="bookTypeOptionsContainer">
+
+                <div class="paperBookOption">
+                    <label for="paperBook">Papírkönyv</label>
+                    <input type="radio" checked="checked" id="paperBook" name="bookTypeRadio" value="paperBook">
+                </div>
+
+                <div class="eBookOption">
+                    <label for="eBook">Ekönyv</label>
+                    <input type="radio" id="eBook" name="bookTypeRadio" value="eBook">
+                </div>
+            </div>
+        </div>
+
+        <!-- form inputs for books -->
+        <form id="form-inputs">
+
+            <div class="title-input">
+                <label for="titleInput">Könyv címe: </label><br>
+                <input type="text" name="titleInput" id="titleInput">
+            </div>
+
+            <div class="price-input">
+                <label for="priceInput">Könyv ára:</label><br>
+                <input type="number" name="priceInput" id="priceInput">
+            </div>
+
+            <div class="size-input">
+                <label for="sizeInput">Könyv mérete (súly vagy fileméret): </label><br>
+                <input type="number" name="sizeInput" id="sizeInput">
+            </div>
+
+            <div class="isbn-input">
+                <label for="isbnInput">Könyv ISBN kódja (13 számjegy):</label><br>
+                <input type="text" name="isbnInput" id="isbnInput">
+            </div>
+
+            <div class="submit-input">
+                <input type="button" value="Könyv felvétele" id="submit">
+            </div>
+        </form>
+    </div>
 
 </body>
+
 </html>
