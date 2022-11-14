@@ -10,6 +10,10 @@ function testRegex(regex, text) {
     return valid;
 }
 document.getElementById('submit').addEventListener('click', () => {
+    document.getElementById('titleInputLabel').classList.remove('wrong-field');
+    document.getElementById('priceInputLabel').classList.remove('wrong-field');
+    document.getElementById('sizeInputLabel').classList.remove('wrong-field');
+    document.getElementById('isbnInputLabel').classList.remove('wrong-field');
     let isEBook = document.querySelector('input[name="bookTypeRadio"]:checked').value == 'paperBook' ? false : true;
     let tempBookTitle = document.getElementById('titleInput').value;
     let tempBookPrice = Number(document.getElementById('priceInput').value);
@@ -31,6 +35,20 @@ document.getElementById('submit').addEventListener('click', () => {
         else {
             let tempBook = { "title": tempBookTitle, "price": tempBookPrice, "size": tempBookSize, "isbn": tempBookISBN };
             booksInfoCalculate(tempBook);
+        }
+    }
+    else {
+        if (!nameValid) {
+            document.getElementById('titleInputLabel').classList.add('wrong-field');
+        }
+        if (!priceValid) {
+            document.getElementById('priceInputLabel').classList.add('wrong-field');
+        }
+        if (!sizeValid) {
+            document.getElementById('sizeInputLabel').classList.add('wrong-field');
+        }
+        if (!isbnValid) {
+            document.getElementById('isbnInputLabel').classList.add('wrong-field');
         }
     }
 });
